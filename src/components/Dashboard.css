@@ -1,31 +1,51 @@
 /* src/components/Dashboard.css */
 
 .dashboard {
-  padding: 20px;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  width: 100%;
 }
 
 .dashboard-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.add-movie-button {
-  padding: 10px 20px;
-  background-color: #007bff;
+.dashboard-header h1 {
+  margin: 0;
+  color: #333;
+  font-size: 2rem;
+}
+
+.add-movie-btn {
+  background-color: #4CAF50;
   color: white;
+  padding: 0.8rem 1.5rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
-.add-movie-button:hover {
-  background-color: #0056b3;
+.add-movie-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.movie-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+  width: 100%;
 }

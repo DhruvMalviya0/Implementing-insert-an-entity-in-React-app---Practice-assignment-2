@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./AddMovie.css";
 
 const AddMovie = () => {
   const [movieDetails, setMovieDetails] = useState({
@@ -21,7 +22,13 @@ const AddMovie = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Movie Added:", movieDetails);
-    navigate("/");
+    
+    // Navigate back to dashboard with the new movie data
+    navigate("/", { 
+      state: { 
+        newMovie: movieDetails 
+      } 
+    });
   };
 
   return (
@@ -57,7 +64,12 @@ const AddMovie = () => {
           <option value="Action">Action</option>
           <option value="Drama">Drama</option>
           <option value="Comedy">Comedy</option>
+          <option value="Sci-Fi">Sci-Fi</option>
           <option value="Thriller">Thriller</option>
+          <option value="Horror">Horror</option>
+          <option value="Romance">Romance</option>
+          <option value="Fantasy">Fantasy</option>
+          <option value="Animation">Animation</option>
         </select>
 
         <input
@@ -67,6 +79,8 @@ const AddMovie = () => {
           value={movieDetails.releaseYear}
           onChange={handleChange}
           required
+          min="1900"
+          max="2099"
         />
 
         <textarea
